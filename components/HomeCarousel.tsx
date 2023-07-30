@@ -38,10 +38,11 @@ const HomeCarousel: React.FC<{
       key={id}
       style={[
         {
+          flex: 1,
           flexDirection: "row",
           ...StyleSheet.absoluteFillObject,
           position: "absolute",
-          alignItems: "stretch",
+          alignItems: "center",
           top: 20,
         },
         animatedCarousel,
@@ -50,9 +51,11 @@ const HomeCarousel: React.FC<{
       <Image
         source={image}
         style={{
-          width: pageWidth,
-          height: 300,
+          width: pageWidth - 20,
+          height: 180,
           borderRadius: 10,
+          resizeMode: "cover",
+          marginLeft: 10, //UPDATE IT.
         }}
       />
     </Animated.View>
