@@ -50,13 +50,15 @@ const Home = () => {
   const alteredSharedXValue = useDerivedValue(() => {
     return Math.max(Math.min(0, sharedXValue.value), maxTranslateX);
   });
+  console.log("WW:", windowWidth);
+  console.log("sv:", sharedXValue.value);
+  console.log("div: ", sharedXValue.value / windowWidth);
   const panGestureEvent = useAnimatedGestureHandler<
     PanGestureHandlerGestureEvent,
     ContextType
   >({
     onStart: (_, context) => {
       context.x = alteredSharedXValue.value;
-      console.log(context.x);
     },
     onActive: (event, context) => {
       sharedXValue.value = event.translationX + context.x;
@@ -68,27 +70,15 @@ const Home = () => {
     },
   });
 
-  const sliderValue = useSharedValue(0);
-  const sliderStyle = (index: number) => {
-    return useAnimatedStyle(() => {
-      return {
-        backgroundColor:
-          sliderValue.value / windowWidth === index ? "#050236" : "gray",
-        width:
-          sliderValue.value / windowWidth === index
-            ? withTiming(40, { duration: 300 })
-            : withTiming(15, { duration: 300 }),
-      };
-    });
-  };
-
   return (
-    <SafeAreaView style={{ backgroundColor: "aquablue" }}>
+    <SafeAreaView style={{ backgroundColor: "aquablue", flex: 1 }}>
       <View
         style={{
           flexDirection: "row",
           justifyContent: "center",
           alignItems: "center",
+          flex: 0.1,
+          backgroundColor: "steelblue",
         }}
       >
         <View
@@ -139,37 +129,51 @@ const Home = () => {
         </View>
       </View>
 
-      <View>
+      <View
+        style={{
+          flex: 0.3,
+          justifyContent: "center",
+          alignItems: "flex-start",
+          backgroundColor: "skyblue",
+        }}
+      >
         <GestureHandlerRootView>
           <PanGestureHandler onGestureEvent={panGestureEvent}>
-            <Animated.View style={{ flexDirection: "row" }}>
+            <Animated.View style={{ flex: 1 }}>
               {carouselData.map((item, index) => (
-                <View
-                  key={index}
-                  style={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flex: 1,
-                  }}
-                >
-                  <HomeCarousel
-                    key={item.id}
-                    image={item.image}
-                    id={item.id}
-                    index={index}
-                    sharedXValue={alteredSharedXValue}
-                  />
-                </View>
+                <HomeCarousel
+                  key={item.id}
+                  image={item.image}
+                  id={item.id}
+                  index={index}
+                  sharedXValue={alteredSharedXValue}
+                />
               ))}
             </Animated.View>
           </PanGestureHandler>
-          {carouselData.map((item, index) => (
-            <Animated.View
-              key={index}
-              style={[sliderStyle(index), { width: 40, backgroundColor: }]}
-            />
-          ))}
         </GestureHandlerRootView>
+      </View>
+      <View
+        style={{
+          backgroundColor: "lightgray",
+          flex: 0.07,
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {carouselData.map((list: any, index: number) => (
+          <View
+            style={{
+              borderWidth: 1,
+              height: 10,
+              width: "3%",
+              marginHorizontal: 1,
+              backgroundColor: "gray",
+              borderRadius: 50,
+            }}
+          />
+        ))}
       </View>
     </SafeAreaView>
   );
