@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   TextInput,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
@@ -16,7 +17,7 @@ const Search = () => {
       <View style={{ flex: 1 }}>
         <View
           style={{
-            flex: 0.2,
+            flex: 0.1,
             // backgroundColor: "red",
             justifyContent: "center",
             alignItems: "flex-start",
@@ -26,7 +27,7 @@ const Search = () => {
         </View>
         <View
           style={{
-            flex: 0.4,
+            flex: 0.15,
             // backgroundColor: "orange",
             justifyContent: "center",
           }}
@@ -83,11 +84,10 @@ const Search = () => {
             />
           </View>
         </View>
-        <View style={{ flex: 0.2, backgroundColor: "red" }}>
+        <View style={{ flex: 1, backgroundColor: "red" }}>
           <TopTab />
         </View>
       </View>
-      <View style={{ flex: 1.5, backgroundColor: "yellow" }}></View>
     </SafeAreaView>
   );
 };
