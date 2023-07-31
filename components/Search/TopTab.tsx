@@ -36,15 +36,18 @@ const TopTab = () => {
 
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => {
-        const isFocused = getFocusedRouteNameFromRoute(route);
-
-        return {
-          tabBarStyle: {
-            backgroundColor: isFocused === route.name ? "#050236" : "white",
-          },
-        };
-      }}
+      screenOptions={({ route }) => ({
+        tabBarScrollEnabled: true,
+        tabBarItemStyle: { width: 120 },
+        tabBarStyle: { backgroundColor: "#050236" },
+        tabBarActiveTintColor: "white",
+        tabBarInactiveTintColor: "gray",
+        tabBarIndicatorStyle: {
+          backgroundColor: "orange",
+          height: 5,
+          borderRadius: 100,
+        },
+      })}
     >
       {TabData.map((tabs, index) => (
         <Tab.Screen name={tabs.name} component={tabs.component} />
@@ -54,8 +57,3 @@ const TopTab = () => {
 };
 
 export default TopTab;
-// tabBarScrollEnabled: true,
-// tabBarActiveTintColor: "white",
-// tabBarInactiveTintColor: "red",
-// tabBarLabelStyle: { fontWeight: "bold" },
-// tabBarStyle: { backgroundColor: "#050236" },
