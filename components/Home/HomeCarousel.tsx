@@ -55,7 +55,9 @@ const HomeCarousel: React.FC<{
           height: 180,
           borderRadius: 10,
           resizeMode: "cover",
-          marginLeft: 10, //UPDATE IT.
+          left: 10,
+          alignSelf: "center",
+          bottom: 20,
         }}
       />
     </Animated.View>

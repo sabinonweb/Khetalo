@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const Orders = () => {
+const Starters = () => {
   return (
     <View>
-      <Text>Orders</Text>
+      <Text>Starters</Text>
     </View>
   );
 };
 
-export default Orders;
+export default Starters;
