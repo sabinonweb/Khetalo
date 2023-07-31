@@ -17,7 +17,6 @@ import { AntDesign } from "@expo/vector-icons";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
-  withTiming,
   withSpring,
 } from "react-native-reanimated";
 import { useNavigation } from "@react-navigation/native";
@@ -26,6 +25,11 @@ const Tabs = createBottomTabNavigator();
 
 const Layout = () => {
   const carouselData = [
+    {
+      name: "Search",
+      icon: "search1",
+      component: Search,
+    },
     {
       name: "Home",
       icon: "home",
@@ -37,11 +41,6 @@ const Layout = () => {
       component: Chat,
     },
 
-    {
-      name: "Search",
-      icon: "search1",
-      component: Search,
-    },
     {
       name: "Profile",
       icon: "user",
@@ -96,7 +95,7 @@ const Layout = () => {
               style={[
                 {
                   borderWidth: 0,
-                  backgroundColor: isFocused ? "white" : "#050236",
+                  backgroundColor: "#050236",
                   borderRadius: 50,
                   height: 60,
                   width: 60,
@@ -107,8 +106,8 @@ const Layout = () => {
             >
               <AntDesign
                 name={list.icon}
-                size={32}
-                color={isFocused ? "black" : "white"}
+                size={24}
+                color="white"
                 style={{ alignSelf: "center" }}
               />
             </View>
@@ -127,11 +126,10 @@ const Layout = () => {
             tabBarLabel: "",
             tabBarStyle: {
               backgroundColor: "#050236",
-              borderRadius: 30,
+              borderRadius: 20,
               height: 70,
-              width: "85%",
+              width: "97%",
               alignSelf: "center",
-              bottom: 30,
             },
             headerShown: false,
           }}
