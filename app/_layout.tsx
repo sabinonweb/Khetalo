@@ -26,14 +26,14 @@ const Tabs = createBottomTabNavigator();
 const Layout = () => {
   const carouselData = [
     {
-      name: "Search",
-      icon: "search1",
-      component: Search,
-    },
-    {
       name: "Home",
       icon: "home",
       component: Home,
+    },
+    {
+      name: "Search",
+      icon: "search1",
+      component: Search,
     },
     {
       name: "Chat",
@@ -107,7 +107,7 @@ const Layout = () => {
               <AntDesign
                 name={list.icon}
                 size={24}
-                color="white"
+                color={isFocused ? "white" : "#b5b5ba"}
                 style={{ alignSelf: "center" }}
               />
             </View>
