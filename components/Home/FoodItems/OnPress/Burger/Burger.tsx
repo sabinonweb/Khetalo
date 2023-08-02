@@ -1,15 +1,16 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { ScrollView } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 
-const Pizza = () => {
-  const pizzaDataLeft = [
+const Burger = () => {
+  const BurgerDataLeft = [
     {
       name: "problemas",
       backgroundColor: "#4f1e27",
       paddingHorizontal: 40,
       paddingVertical: 20,
-      image: require("../../../../assets/navigate/104.png"),
+      image: require("../../../../assets/navigate/a.png"),
       key: 1,
       price: "$40",
       marginTop: 30,
@@ -19,16 +20,17 @@ const Pizza = () => {
       backgroundColor: "#d1f0eb",
       paddingHorizontal: 70,
       paddingVertical: 40,
-      image: require("../../../../assets/navigate/104.png"),
+      image: require("../../../../assets/navigate/a.png"),
       price: "$40",
       marginTop: 40,
+      key: 2,
     },
     {
       name: "¡Qué",
       backgroundColor: "skyblue",
       paddingHorizontal: 30,
       paddingVertical: 25,
-      image: require("../../../../assets/navigate/104.png"),
+      image: require("../../../../assets/navigate/a.png"),
       key: 3,
       price: "$40",
       marginTop: 20,
@@ -38,7 +40,7 @@ const Pizza = () => {
       backgroundColor: "#f5e5cb",
       paddingHorizontal: 50,
       paddingVertical: 50,
-      image: require("../../../../assets/navigate/104.png"),
+      image: require("../../../../assets/navigate/a.png"),
       key: 4,
       price: "$40",
       marginTop: 50,
@@ -47,8 +49,8 @@ const Pizza = () => {
       name: "Muchas",
       backgroundColor: "#d6b072",
       paddingHorizontal: 100,
-      paddingVertical: 10,
-      image: require("../../../../assets/navigate/104.png"),
+      paddingVertical: 100,
+      image: require("../../../../assets/navigate/a.png"),
       key: 5,
       price: "$40",
       marginTop: 80,
@@ -58,20 +60,20 @@ const Pizza = () => {
       backgroundColor: "#8a8469",
       paddingHorizontal: 80,
       paddingVertical: 80,
-      image: require("../../../../assets/navigate/104.png"),
+      image: require("../../../../assets/navigate/a.png"),
       key: 6,
       marginTop: 10,
       price: "$40",
     },
   ];
-  const pizzaDataRight = [
+  const BurgerDataRight = [
     {
       name: "Muchas",
       backgroundColor: "#21204d",
       paddingHorizontal: 80,
       paddingVertical: 100,
-      image: require("../../../../assets/navigate/104.png"),
-      key: 5,
+      image: require("../../../../assets/navigate/a.png"),
+      key: 7,
       price: "$40",
       marginTop: 80,
     },
@@ -80,8 +82,8 @@ const Pizza = () => {
       backgroundColor: "#d67284",
       paddingHorizontal: 20,
       paddingVertical: 70,
-      image: require("../../../../assets/navigate/104.png"),
-      key: 6,
+      image: require("../../../../assets/navigate/a.png"),
+      key: 8,
       price: "$40",
       marginTop: 80,
     },
@@ -90,8 +92,8 @@ const Pizza = () => {
       backgroundColor: "#778c65",
       paddingHorizontal: 50,
       paddingVertical: 60,
-      image: require("../../../../assets/navigate/104.png"),
-      key: 4,
+      image: require("../../../../assets/navigate/a.png"),
+      key: 9,
       price: "$40",
       marginTop: 80,
     },
@@ -99,9 +101,9 @@ const Pizza = () => {
       name: "¡Qué",
       backgroundColor: "#65678c",
       paddingHorizontal: 100,
-      paddingVertical: 120,
-      image: require("../../../../assets/navigate/104.png"),
-      key: 3,
+      paddingVertical: 200,
+      image: require("../../../../assets/navigate/a.png"),
+      key: 10,
       price: "$40",
       marginTop: 80,
     },
@@ -111,8 +113,8 @@ const Pizza = () => {
       backgroundColor: "#f0d1e3",
       paddingHorizontal: 20,
       paddingVertical: 70,
-      image: require("../../../../assets/navigate/104.png"),
-      key: 1,
+      image: require("../../../../assets/navigate/a.png"),
+      key: 11,
       price: "$40",
       marginTop: 80,
     },
@@ -122,17 +124,23 @@ const Pizza = () => {
       backgroundColor: "#d1f0eb",
       paddingHorizontal: 60,
       paddingVertical: 90,
-      image: require("../../../../assets/navigate/104.png"),
+      image: require("../../../../assets/navigate/a.png"),
       price: "$40",
-      key: 2,
+      key: 12,
       marginTop: 80,
     },
   ];
+
+  const Navigation = useNavigation();
+
+  const pressHandler = (list) => {
+    Navigation.navigate("PressHandler");
+  };
   return (
     <ScrollView style={{ flex: 1 }}>
       <View style={{ flexDirection: "row" }}>
         <View style={{ flex: 1 }}>
-          {pizzaDataLeft.map((list, index) => (
+          {BurgerDataLeft.map((list, index) => (
             <View
               style={{
                 flex: 1,
@@ -147,10 +155,15 @@ const Pizza = () => {
                 borderRadius: 20,
               }}
             >
-              <Image
-                source={list.image}
-                style={{ width: 150, height: 90, alignSelf: "center" }}
-              />
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => pressHandler(list)}
+              >
+                <Image
+                  source={list.image}
+                  style={{ width: 180, height: 140, alignSelf: "center" }}
+                />
+              </TouchableOpacity>
               <View
                 style={{
                   backgroundColor: "white",
@@ -176,7 +189,7 @@ const Pizza = () => {
         </View>
 
         <View style={{ flex: 1 }}>
-          {pizzaDataRight.map((list, index) => (
+          {BurgerDataRight.map((list, index) => (
             <View
               style={{
                 flex: 1,
@@ -191,10 +204,15 @@ const Pizza = () => {
                 borderRadius: 20,
               }}
             >
-              <Image
-                source={list.image}
-                style={{ width: 150, height: 90, alignSelf: "center" }}
-              />
+              <TouchableOpacity
+                activeOpacity={0.9}
+                onPress={() => pressHandler(list)}
+              >
+                <Image
+                  source={list.image}
+                  style={{ width: 180, height: 140, alignSelf: "center" }}
+                />
+              </TouchableOpacity>
               <View
                 style={{
                   backgroundColor: "white",
@@ -223,4 +241,4 @@ const Pizza = () => {
   );
 };
 
-export default Pizza;
+export default Burger;
