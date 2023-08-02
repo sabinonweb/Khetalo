@@ -1,6 +1,7 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import { Icon } from "@rneui/themed";
+import OnPress from "./FoodItems/OnPress";
+import { useNavigation } from "@react-navigation/native";
 
 const FoodItems = () => {
   const foodData = [
@@ -30,7 +31,7 @@ const FoodItems = () => {
       id: 5,
     },
     {
-      name: "Offers",
+      name: "Burger",
       icon: require("../../assets/urger1.jpg"),
       id: 6,
     },
@@ -46,6 +47,12 @@ const FoodItems = () => {
     },
   ];
 
+  const navigation = useNavigation();
+
+  const handlePress = (list) => {
+    navigation.navigate("OnPress", { foodName: list.name });
+  };
+
   return (
     <View
       style={{
@@ -57,7 +64,9 @@ const FoodItems = () => {
       }}
     >
       {foodData.map((list, index) => (
-        <View
+        <TouchableOpacity
+          activeOpacity={0.95}
+          onPress={() => handlePress(list)}
           key={index}
           style={{
             borderWidth: 0.1,
@@ -82,7 +91,7 @@ const FoodItems = () => {
             }}
           />
           <Text>{list.name}</Text>
-        </View>
+        </TouchableOpacity>
       ))}
     </View>
   );

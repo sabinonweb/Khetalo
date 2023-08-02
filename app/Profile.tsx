@@ -1,7 +1,9 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import ProfileUser from "../components/Profile/ProfileUser";
+import PreferenceProfile from "../components/Profile/PreferenceProfile";
 
 const Profile = () => {
   return (
@@ -13,7 +15,14 @@ const Profile = () => {
           justifyContent: "center",
         }}
       >
-        <Ionicons name="menu" size={40} style={{ marginLeft: 10 }} />
+        <TouchableOpacity activeOpacity={0.8}>
+          <Ionicons
+            name="menu"
+            size={40}
+            color="#050206"
+            style={{ marginLeft: 10 }}
+          />
+        </TouchableOpacity>
       </View>
       <View
         style={{
@@ -100,8 +109,12 @@ const Profile = () => {
           </Text>
         </TouchableOpacity>
       </View>
-      <View style={{ flex: 0.45, backgroundColor: "steelblue" }}></View>
-      <View style={{ flex: 0.1, backgroundColor: "pink" }}></View>
+      <View style={{ flex: 0.55 }}>
+        <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+          <ProfileUser />
+          <PreferenceProfile />
+        </ScrollView>
+      </View>
     </View>
   );
 };

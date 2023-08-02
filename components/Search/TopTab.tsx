@@ -6,7 +6,6 @@ import Appetizers from "./TopTabs/Appetizers";
 import MainCourse from "./TopTabs/MainCourse";
 import Dessert from "./TopTabs/Dessert";
 import Starters from "./TopTabs/Starters";
-import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 
 const Tab = createMaterialTopTabNavigator();
 
