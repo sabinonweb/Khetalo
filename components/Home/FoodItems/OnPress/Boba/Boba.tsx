@@ -2,14 +2,14 @@ import { View, Text, Image } from "react-native";
 import React from "react";
 import { ScrollView } from "react-native-gesture-handler";
 
-const Chicken = () => {
-  const chickenDataLeft = [
+const Boba = () => {
+  const bobaDataLeft = [
     {
       name: "problemas",
       backgroundColor: "#4f1e27",
       paddingHorizontal: 40,
       paddingVertical: 20,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       key: 1,
       price: "$40",
       marginTop: 30,
@@ -19,7 +19,7 @@ const Chicken = () => {
       backgroundColor: "#d1f0eb",
       paddingHorizontal: 70,
       paddingVertical: 40,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       price: "$40",
       marginTop: 40,
     },
@@ -28,7 +28,7 @@ const Chicken = () => {
       backgroundColor: "skyblue",
       paddingHorizontal: 30,
       paddingVertical: 25,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       key: 3,
       price: "$40",
       marginTop: 20,
@@ -38,7 +38,7 @@ const Chicken = () => {
       backgroundColor: "#f5e5cb",
       paddingHorizontal: 50,
       paddingVertical: 50,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       key: 4,
       price: "$40",
       marginTop: 50,
@@ -48,7 +48,7 @@ const Chicken = () => {
       backgroundColor: "#d6b072",
       paddingHorizontal: 100,
       paddingVertical: 10,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       key: 5,
       price: "$40",
       marginTop: 80,
@@ -58,19 +58,19 @@ const Chicken = () => {
       backgroundColor: "#8a8469",
       paddingHorizontal: 80,
       paddingVertical: 80,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       key: 6,
       marginTop: 10,
       price: "$40",
     },
   ];
-  const chickenDataRight = [
+  const bobaDataRight = [
     {
       name: "Muchas",
       backgroundColor: "#21204d",
       paddingHorizontal: 80,
       paddingVertical: 100,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       key: 5,
       price: "$40",
       marginTop: 80,
@@ -80,7 +80,7 @@ const Chicken = () => {
       backgroundColor: "#d67284",
       paddingHorizontal: 20,
       paddingVertical: 70,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       key: 6,
       price: "$40",
       marginTop: 80,
@@ -90,7 +90,7 @@ const Chicken = () => {
       backgroundColor: "#778c65",
       paddingHorizontal: 50,
       paddingVertical: 60,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       key: 4,
       price: "$40",
       marginTop: 80,
@@ -100,7 +100,7 @@ const Chicken = () => {
       backgroundColor: "#65678c",
       paddingHorizontal: 100,
       paddingVertical: 120,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       key: 3,
       price: "$40",
       marginTop: 80,
@@ -111,7 +111,7 @@ const Chicken = () => {
       backgroundColor: "#f0d1e3",
       paddingHorizontal: 20,
       paddingVertical: 70,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       key: 1,
       price: "$40",
       marginTop: 80,
@@ -122,7 +122,7 @@ const Chicken = () => {
       backgroundColor: "#d1f0eb",
       paddingHorizontal: 60,
       paddingVertical: 90,
-      image: require("../../../../assets/Food/19.png"),
+      image: require("../../../../assets/navigate/101.png"),
       price: "$40",
       key: 2,
       marginTop: 80,
@@ -132,7 +132,7 @@ const Chicken = () => {
     <ScrollView style={{ flex: 1 }}>
       <View style={{ flexDirection: "row" }}>
         <View style={{ flex: 1 }}>
-          {chickenDataLeft.map((list, index) => (
+          {bobaDataLeft.map((list, index) => (
             <View
               style={{
                 flex: 1,
@@ -149,8 +149,14 @@ const Chicken = () => {
             >
               <Image
                 source={list.image}
-                style={{ width: 150, height: 90, alignSelf: "center" }}
+                style={{
+                  width: 150,
+                  height: 90,
+                  resizeMode: "center",
+                  alignSelf: "center",
+                }}
               />
+
               <View
                 style={{
                   backgroundColor: "white",
@@ -176,7 +182,7 @@ const Chicken = () => {
         </View>
 
         <View style={{ flex: 1 }}>
-          {chickenDataRight.map((list, index) => (
+          {bobaDataRight.map((list, index) => (
             <View
               style={{
                 flex: 1,
@@ -223,4 +229,4 @@ const Chicken = () => {
   );
 };
 
-export default Chicken;
+export default Boba;

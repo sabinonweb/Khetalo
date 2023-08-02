@@ -4,11 +4,11 @@ import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import Pizza from "./OnPress/Pizza";
-import Burger from "./OnPress/Burger";
-import Chicken from "./OnPress/Chicken";
+import Burger from "./OnPress/Burger/Burger";
+import Chicken from "./OnPress/Chicken/Chicken";
 import Coffee from "./OnPress/Coffee";
 import Offers from "./OnPress/Offers";
-import Boba from "./OnPress/Boba";
+import Boba from "./OnPress/Boba/Boba";
 import Rice from "./OnPress/Rice";
 import Salad from "./OnPress/Salad";
 
@@ -60,7 +60,7 @@ const OnPress = ({ route }) => {
         style={{
           flex: 1,
           flexDirection: "row",
-          justifyContent: "flex-start",
+          justifyContent: "flx-start",
           alignItems: "center",
         }}
       >
@@ -70,13 +70,14 @@ const OnPress = ({ route }) => {
         <View
           style={{
             borderWidth: 0.1,
-            width: "80%",
+            width: "95%",
             height: "60%",
             backgroundColor: "lightgray",
             borderRadius: 10,
             flex: 0.85,
             justifyContent: "center",
             flexDirection: "row",
+            left: 20,
           }}
         >
           <TextInput
