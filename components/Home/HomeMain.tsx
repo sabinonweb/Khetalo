@@ -17,7 +17,6 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 import FoodItems from "./FoodItems";
-import { NavigationContainer, StackRouter } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Featured from "./Featured";
 

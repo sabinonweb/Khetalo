@@ -3,14 +3,14 @@ import React, { Component } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
-import Pizza from "./OnPress/Pizza";
+import Pizza from "./OnPress/Pizza/Pizza";
 import Burger from "./OnPress/Burger/Burger";
 import Chicken from "./OnPress/Chicken/Chicken";
-import Coffee from "./OnPress/Coffee";
-import Offers from "./OnPress/Offers";
+import Coffee from "./OnPress/Coffee/Coffee";
+import Offers from "./OnPress/Offers/Offers";
 import Boba from "./OnPress/Boba/Boba";
-import Rice from "./OnPress/Rice";
-import Salad from "./OnPress/Salad";
+import Rice from "./OnPress/Rice/Rice";
+import Salad from "./OnPress/Salad/Salad";
 
 const OnPress = ({ route }) => {
   const { foodName } = route.params;
