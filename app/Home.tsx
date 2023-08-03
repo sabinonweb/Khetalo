@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeMain from "../components/Home/HomeMain";
 import FoodItems from "../components/Home/FoodItems";
 import OnPress from "../components/Home/FoodItems/OnPress";
-import PressHandler from "../components/Home/FoodItems/OnPress/Burger/PressHandler";
+import PressHandler from "../components/Home/FoodItems/PressHandler";
 
 const Stack = createStackNavigator();
 
